@@ -1,22 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import InputGroup from "react-bootstrap/InputGroup";
+import FormControl from "react-bootstrap/FormControl";
+import Button from "react-bootstrap/Button";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1 className="zander">Zoom Transcriber</h1>
+        <div className="inputs">
+          <InputGroup className="z-link">
+            <InputGroup.Prepend className="prepender">
+              <InputGroup.Text id="linktext">🔗</InputGroup.Text>
+            </InputGroup.Prepend>
+            <FormControl
+              placeholder="Zoom Link"
+              aria-label="Zoom Link"
+              aria-describedby="linktext"
+            />
+          </InputGroup>
+          <p className="or">or</p>
+          <Button className="upload" variant="secondary">
+            Upload .mp4 from Computer
+          </Button>{" "}
+        </div>
+        <Button className="transcribe" variant="success">
+          Transcribe
+        </Button>
       </header>
     </div>
   );
